@@ -17,8 +17,6 @@ const App = () => {
 				<CardWithForm
 					setDistrict={setDistrict}
 					setName={setName}
-					name={name}
-					district={district}
 				></CardWithForm>
 			</div>
 		</ThemeProvider>
