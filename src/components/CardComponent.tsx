@@ -11,8 +11,23 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useState } from "react"
 
-export function CardWithForm({ setDistrict, setName }) {
+interface CardWithFormProps {
+	setDistrict: (district: string) => void
+	setName: (name: string) => void
+}
+
+export function CardWithForm({ setDistrict, setName }: CardWithFormProps) {
+	const [formName, setFormName] = useState("")
+	const [formDistrict, setFormDistrict] = useState("")
+
+	function onSubmit(e: React.MouseEvent<HTMLButtonElement>) {
+		e.preventDefault()
+		setName(formName)
+		setDistrict(formDistrict)
+	}
+
 	return (
 		<Card className="w-[350px]">
 			<CardHeader>
@@ -24,17 +39,27 @@ export function CardWithForm({ setDistrict, setName }) {
 					<div className="grid w-full items-center gap-8">
 						<div className="flex flex-col space-y-1.5">
 							<Label htmlFor="name">Name</Label>
-							<Input id="name" placeholder="Your Name" />
+							<Input
+								id="name"
+								value={formName}
+								onChange={(e) => setFormName(e.target.value)}
+								placeholder="Your Name"
+							/>
 						</div>
 						<div className="flex flex-col space-y-1.5">
 							<Label htmlFor="district">District</Label>
-							<Input id="district" placeholder="District" />
+							<Input
+								id="district"
+								value={formDistrict}
+								onChange={(e) => setFormDistrict(e.target.value)}
+								placeholder="District"
+							/>
 						</div>
 					</div>
 				</form>
 			</CardContent>
 			<CardFooter className="flex justify-end">
-				<Button>Submit</Button>
+				<Button onClick={(e) => onSubmit(e)}>Submit</Button>
 			</CardFooter>
 		</Card>
 	)
