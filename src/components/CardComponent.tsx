@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { ModeToggle } from "./mode-toggle"
 
 export function CardWithForm() {
 	return (
@@ -34,6 +35,7 @@ export function CardWithForm() {
 				</form>
 			</CardContent>
 			<CardFooter className="flex justify-end">
+				<ModeToggle />
 				<Button>Submit</Button>
 			</CardFooter>
 		</Card>
