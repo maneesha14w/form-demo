@@ -11,9 +11,8 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ModeToggle } from "./mode-toggle"
 
-export function CardWithForm() {
+export function CardWithForm({ setDistrict, setName }) {
 	return (
 		<Card className="w-[350px]">
 			<CardHeader>
@@ -22,7 +21,7 @@ export function CardWithForm() {
 			</CardHeader>
 			<CardContent>
 				<form>
-					<div className="grid w-full items-center gap-4">
+					<div className="grid w-full items-center gap-8">
 						<div className="flex flex-col space-y-1.5">
 							<Label htmlFor="name">Name</Label>
 							<Input id="name" placeholder="Your Name" />
@@ -35,7 +34,6 @@ export function CardWithForm() {
 				</form>
 			</CardContent>
 			<CardFooter className="flex justify-end">
-				<ModeToggle />
 				<Button>Submit</Button>
 			</CardFooter>
 		</Card>
