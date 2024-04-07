@@ -13,6 +13,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 
+/**
+ * Props for the CardWithForm component.
+ * @typedef {Object} CardWithFormProps
+ * @property {function} onSubmit - Function to handle form submission.
+ */
 interface CardWithFormProps {
 	setData: ({ name, district }: { name: string; district: string }) => void
 	onSubmit: (

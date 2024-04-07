@@ -4,7 +4,19 @@ import { ThemeProvider } from "./components/ui/theme-provider"
 import { ModeToggle } from "./components/ui/mode-toggle"
 
 const App = () => {
+	/**
+	 * State for storing user data.
+	 * @type {object}
+	 * @property {string} name - The name of the user.
+	 * @property {string} district - The district where the user is from.
+	 */
 	const [data, setData] = useState({ name: "Maneesha", district: "Colombo" })
+	/**
+	 * Function to handle form submission.
+	 * @param {React.MouseEvent<HTMLButtonElement>} e - The click event.
+	 * @param {string} formName - The new name value from the form.
+	 * @param {string} formDistrict - The new district value from the form.
+	 */
 	function onSubmit(
 		e: React.MouseEvent<HTMLButtonElement>,
 		formName: string,
