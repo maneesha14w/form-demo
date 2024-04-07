@@ -9,6 +9,7 @@ A demo of a form.
 - Captures data and displays it.
 - UI created with shadcn/ui components and tailwindcss.
 - Built using React (vite) and TypeScript.
+- Deployed on netlify.
 
 ## Optimizations
 
