@@ -14,19 +14,17 @@ import { Label } from "@/components/ui/label"
 import { useState } from "react"
 
 interface CardWithFormProps {
-	setDistrict: (district: string) => void
-	setName: (name: string) => void
+	setData: ({ name, district }: { name: string; district: string }) => void
+	onSubmit: (
+		e: React.MouseEvent<HTMLButtonElement>,
+		formName: string,
+		formDistrict: string,
+	) => void
 }
 
-export function CardWithForm({ setDistrict, setName }: CardWithFormProps) {
+export function CardWithForm({ onSubmit }: CardWithFormProps) {
 	const [formName, setFormName] = useState("")
 	const [formDistrict, setFormDistrict] = useState("")
-
-	function onSubmit(e: React.MouseEvent<HTMLButtonElement>) {
-		e.preventDefault()
-		setName(formName)
-		setDistrict(formDistrict)
-	}
 
 	return (
 		<Card className="w-[350px]">
@@ -59,7 +57,9 @@ export function CardWithForm({ setDistrict, setName }: CardWithFormProps) {
 				</form>
 			</CardContent>
 			<CardFooter className="flex justify-end">
-				<Button onClick={(e) => onSubmit(e)}>Submit</Button>
+				<Button onClick={(e) => onSubmit(e, formName, formDistrict)}>
+					Submit
+				</Button>
 			</CardFooter>
 		</Card>
 	)
