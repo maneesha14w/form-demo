@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# form-demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A demo of a form.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Light/dark mode toggle
+- Responsive
+- Captures data and displays it.
+- UI created with shadcn/ui components and tailwindcss.
+- Built using React (vite) and TypeScript.
 
-## Expanding the ESLint configuration
+## Optimizations
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Uses single object for state.
 
-- Configure the top-level `parserOptions` property like this:
+## Run Locally
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Clone the project
+
+```bash
+  git clone https://github.com/maneesha14w/form-demo
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd form-demo
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
